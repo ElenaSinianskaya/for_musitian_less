@@ -1,3 +1,4 @@
+@header-height:62px;
 @primary-bg:#ffffff;
 
 .wrapper{
@@ -6,9 +7,8 @@
 }
 
 .section{
-    // position: relative;
-    // overflow: hidden;
     background: @primary-bg;
+    position: relative;
 
     &-inverse{
         // background: secondary color;
@@ -16,7 +16,7 @@
 
     &-background img{
       position: absolute;
-      left: 0;
+      left: -2px;
       top: 0;
       right: 0;
       bottom: 0;
@@ -50,7 +50,7 @@
 }
 
 .header{
-   min-height: 60px;
+   min-height: @header-height;
    background-color: rgba(0, 8, 12, 0.1);
    position: relative;
    z-index: 4;
@@ -63,13 +63,13 @@
 }
 
 .section-main{
+  margin-top: calc(-@header-height - 2px);
   .section-body-content{
     min-height: 1000px;
     display: flex;
     justify-content: center;
     align-items: baseline;
-    padding-top: 145px;
-    padding-right: 43px;
+    padding-top: 190px;
     .logo{
       width:426px;
       height:394px;
@@ -79,5 +79,11 @@
         object-fit: cover;
       }
     }
+  }
+}
+
+.section-discography{
+  .section-body-content{
+    min-height: 1056px;
   }
 }
