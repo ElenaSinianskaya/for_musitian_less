@@ -1,4 +1,5 @@
 @btn-light-color:#ffffff;
+@btn-dark-color:#000000;
 
 .button{
   display:-webkit-inline-flex;
@@ -9,7 +10,7 @@
   height: 56px;
   opacity: 0.93;
   color: @btn-light-color;
-  background-image: url("../img/bg_btn.png");
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +21,28 @@
   text-transform: uppercase;
 }
 
-.button:hover{
-  // color: ;
-  // background: ;
+.button-first{
+  background-image: url("../img/bg_btn.png");
 }
+
+.button-second{
+   background-image: url("../img/bg-btn-2.png");
+   color: @btn-dark-color;
+}
+
+.button-third{
+  background-image: url("../img/bg-btn-3.png");
+  color: @btn-dark-color;
+}
+
+.button-fourth{
+  color: @btn-dark-color;
+  border: 1px solid #636363;
+  text-transform: none;
+}
+
+.button:hover{
+  opacity: 0.6;
+}
+
+
