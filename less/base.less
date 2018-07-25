@@ -18,7 +18,7 @@
 @primary-subtitle-bg-after:#000000;
 @section-rate-icon-color:#999999;
 @slider-subtitle-font-family:'Dosis', sans-serif;
-
+@album-number-font-family:'Open Sans', sans-serif;;
 
 
 .mixin-font-styles (@color, @font-family, @font-size, @font-weight, @line-height, @text-transform){
@@ -119,6 +119,12 @@ p.section-description{
   }
 }
 
+p.album-number{
+  .mixin-font-styles(#000000, @album-number-font-family, 82px, 700, 142.66px, uppercase);
+  opacity: 0.17;
+  margin:0;
+}
+
 .section-heading-title{
     position: relative;
   }
@@ -149,6 +155,10 @@ p.section-description{
 
 .paragraph{
    .year
+}
+
+.paragraph-album{
+  color:#ffffff;
 }
 
 .section-rate{
@@ -469,7 +479,82 @@ div.left-top-content{
       text-align: center;
       margin-bottom: 31px;
     }
-    
- }
+}
+
+.section-albums{
+  .container{
+   padding: 0;
+  }
+
+  .list-albums{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 122px;
+  }
+
+  .list-item{
+    margin: 12px 10px;
+  }
+  .section-description-event{
+    width: 100%;
+  }
+
+  .section-date-event{
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .subtitle{
+    margin-bottom: 40px;
+    line-height: 27.6px;
+  }
+
+  .card-item{
+    width: 384px;
+    height: 422px;
+    padding: 0 35px;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+  }
+
+  .album-serial-number{
+    position: absolute;
+    right: 9px;
+    bottom:-55px;
+  }
+  .first-card{
+    background:url("../img/bg-1.png") no-repeat;
+  }
+  .second-card{
+    background:url("../img/bg-2.png") no-repeat;
+  }
+  .third-card{
+    background:url("../img/bg-3.png") no-repeat;
+  }
+  .fourth-card{
+    background:url("../img/bg-4.png") no-repeat;
+    .section-date-event{
+      padding-top: 15px;
+    }
+  }
+  .fifth-card{
+    background:url("../img/bg-5.png") no-repeat;
+    .section-date-event{
+      padding-top: 15px;
+    }
+  }
+  .sixth-card{
+    background:url("../img/bg-6.png") no-repeat;
+    .section-date-event{
+      padding-top: 15px;
+    }
+  }
+  .section-text-content{
+    max-height: 185px; 
+    overflow: hidden;
+  }
+
+}
 
 
