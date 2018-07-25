@@ -77,14 +77,17 @@ ul{
     flex-wrap: wrap;
     align-items: center;
     height: 62px;
+  &-item{
+    cursor: pointer;
+  }
   &-link{
-   .mixin-font-styles(#606060, @nav-link-font-family, 17px, 400, null, uppercase);
+    .mixin-font-styles(#606060, @nav-link-font-family, 17px, 400, null, uppercase);
     padding: 0 5px;
     &:hover{
-      color:#000;
-    }
-  }
-}
+      color:#000000;
+     }
+   }
+ }
 
 .is-active{
   color: #000000;
@@ -187,7 +190,7 @@ p.album-number{
   display: flex;
   width:248px;
   justify-content: space-between;
-  margin-right: 27px;
+  margin: 0 27px;
 }
 
 .subtitle{
@@ -490,6 +493,7 @@ div.left-top-content{
     display: flex;
     flex-wrap: wrap;
     padding-top: 122px;
+    justify-content: center;
   }
 
   .list-item{
