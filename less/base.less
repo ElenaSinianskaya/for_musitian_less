@@ -10,6 +10,7 @@
 @section-title-font-family: 'Dosis', sans-serif;
 @section-description-primary-color: #798285;
 @primary-font-family:'Open Sans', sans-serif;
+@secondary-font-family:'Dosis', sans-serif;
 @primary-dark-color:#000;
 @year-color:#000;
 @primary-paragraph-color:#000;
@@ -18,8 +19,7 @@
 @primary-subtitle-bg-after:#000000;
 @section-rate-icon-color:#999999;
 @slider-subtitle-font-family:'Dosis', sans-serif;
-@album-number-font-family:'Open Sans', sans-serif;;
-
+@album-number-font-family:'Open Sans', sans-serif;
 
 .mixin-font-styles (@color, @font-family, @font-size, @font-weight, @line-height, @text-transform){
   color:@color;
@@ -158,6 +158,12 @@ p.album-number{
 
 .paragraph{
    .year
+}
+
+.date-history-value{
+  .mixin-font-styles(#b2b2b2, @secondary-font-family, 35px, 400, 59.27px, uppercase);
+  letter-spacing: 4.19px;
+  margin-bottom: 0;
 }
 
 .paragraph-album{
@@ -561,4 +567,141 @@ div.left-top-content{
 
 }
 
+.section-upcoming-events{
+  .section-heading-title:after{
+    width: 100%;
+    left: 48%;
+    top: 55px;
+  }
+  .subtitle{
+      margin-bottom:12px;
+    }
+    .section-title{
+      color: #42717e;
+    }
+    .section-text-content{
+      padding-bottom: 50px;
+      width: 544px;
+      position: relative;
+    }
+    div.section-text-content:after{
+      position: absolute;
+      bottom:-20px;
+      left: 36px;
+       content:'';
+       width: 1px;
+       height: 51px;
+       background-color: #000;
+    }
+    .text{
+      margin:0;
+      letter-spacing: 0.25px;
+    }
+    .section-tour{
+      position: relative;
+    }
+    div.section-tour:after{
+      position: absolute;
+      top:53px;
+      left: 0;
+      content:'';
+      width:132px;
+      height: 1px;
+      background-color: #000;
+    }
+    .section-heading{
+      width: 1012px;
+      text-align: left;
+      padding-bottom: 58px;
+      .section-heading-content{
+        width: 502px;
+        padding-top: 147px;
+        .section-heading-title{
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+    .section-body{
+      width: 1012px;
+      text-align: left;
+    }
+    .section-tour-top-content{
+      padding-bottom: 167px;
+       .tour-date{
+      position: relative;
+    }
+
+    div.tour-date:after{
+      position: absolute;
+      bottom:-178px;
+      left: 36px;
+      content:'';
+      width:1px;
+      height: 165px;
+      background-color: #000;
+    }
+    }
+
+    .section-tour-bottom-content{
+      position: relative;
+      .subtitle{
+        margin-bottom: 25px;
+      }
+      padding-bottom: 127px;
+      .section-text-content{
+        padding-bottom: 38px;
+      }
+    }
+  }
+
+.section-history{
+  .dates{
+    padding-top: 134px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .date-history-value{
+    text-align: center;
+  }
+  .date-histiry-text{
+    max-width: 204px;
+    margin-top: 19px;
+    text-align: center;
+      .mixin-font-styles(#5a5a58, @primary-font-family, 14px, 400, 19.27px, none);
+   }
+   .third-history-date{
+    padding-left: 16px;
+   }
+  .section-body{
+    .container{
+      max-width: 1594px;
+    }
+   }
+   .date{
+      position: relative;
+    }
+     div.date:before{
+        position: absolute;
+        content: '';
+        left: -182px;
+        top: 66px;
+        width: 147px;
+        height: 1px;
+        background-color: #000000;
+        opacity: 0.28;
+      }
+    .date:last-child{
+      &:after{
+        position: absolute;
+        content: '';
+        right: -187px;
+        top: 66px;
+        width: 147px;
+        height: 1px;
+        background-color: #000;
+        opacity: 0.28;
+      }
+    }
+}
 
