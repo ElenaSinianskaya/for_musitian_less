@@ -39,6 +39,23 @@
   border:@border;
 }
 
+.mixin-after(@position, @top, @bottom, @left, @right, @width, @height, @background){
+  position:@position;
+  top:@top;
+  bottom:@bottom;
+  left:@left;
+  right:@right;
+  width:@width;
+  height:@height;
+  content:'';
+  background:@background;
+}
+
+.mixin-flex{
+  display: flex;
+  justify-content:space-between;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -72,8 +89,9 @@ ul{
 }
 
 .nav{
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    .mixin-flex;
     flex-wrap: wrap;
     align-items: center;
     height: 62px;
@@ -129,19 +147,20 @@ p.album-number{
 }
 
 .section-heading-title{
-    position: relative;
-  }
+  position: relative;
+}
 
 .section-heading-title:after{
-    position:absolute;
-    left: 50%;
-    top: 57px;
-    content:'';
-    background-color: @primary-subtitle-bg-after;
-    width:110%;
-    height: 1px;
+  .mixin-after (absolute, 57px, null, 50%, null, 110%, 1px, @primary-subtitle-bg-after);
+    // position:absolute;
+    // left: 50%;
+    // top: 57px;
+    // content:'';
+    // background-color: @primary-subtitle-bg-after;
+    // width:110%;
+    // height: 1px;
     transform: translate(-50%,0);
-  }
+}
 
 .section-text-content{
   margin-bottom: 26px;
@@ -171,14 +190,14 @@ p.album-number{
 }
 
 .section-rate{
-  display: flex;
-  justify-content: space-between;
+  .mixin-flex;
+  // display: flex;
+  // justify-content: space-between;
   align-items: flex-end;
     i{
       color:@section-rate-icon-color;
       font-size: 17px;
-  }
-
+    }
   .statistic-value{
     font-size: 12px;
     margin-bottom: 3px;
@@ -193,9 +212,10 @@ p.album-number{
 }
 
 .list-statistic{
-  display: flex;
+  .mixin-flex;
+  // display: flex;
+  // justify-content: space-between;
   width:248px;
-  justify-content: space-between;
   margin: 0 27px;
 }
 
@@ -220,8 +240,9 @@ p.album-number{
 
 .section-body-content{
   &-part{
-    display: flex;
-    justify-content: space-between;
+     .mixin-flex;
+    // display: flex;
+    // justify-content: space-between;
     padding-top: 110px;
   }
 }
@@ -238,13 +259,14 @@ p.album-number{
 div.left-top-content{
   position: relative;
     &:after{
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      content:'';
-      background-color: @primary-subtitle-bg-after;
-      left: 0;
-      bottom: -7px;
+      .mixin-after(absolute, null, -7px, 0, null, 100%, 1px, @primary-subtitle-bg-after);
+      // position: absolute;
+      // width: 100%;
+      // height: 1px;
+      // content:'';
+      // background-color: @primary-subtitle-bg-after;
+      // left: 0;
+      // bottom: -7px;
     }
 }
 
@@ -350,16 +372,13 @@ div.left-top-content{
   .section-description-event{
     width: 100%;
   }
-
-   .section-date-event{
+  .section-date-event{
     width: 80%;
     padding-top: 12px;
-   }
-
-    .subtitle{
-      line-height: 27.8px;
-    }
-
+  }
+  .subtitle{
+    line-height: 27.8px;
+  }
   .section-body-card-left{
     width:50%;
     height: 422px;
@@ -367,26 +386,21 @@ div.left-top-content{
     padding-left: 36px;
     overflow:hidden;
   }
-
-   .section-body-card-right{
+  .section-body-card-right{
     width: 50%;
     overflow:hidden;
   }
-
   .section-text-content{
    max-height: 108px;
    margin-bottom: 38px;
    overflow: hidden;
   }
-
   .section-body-content{
     padding-top: 145px;
   }
-
   .card-text{
     background-color: #f5f6f6;
   }
-
   .video-content{
     width: 100%;
     height: 422px;
@@ -395,9 +409,8 @@ div.left-top-content{
       width: 100%;
       height: 100%;
       object-fit: cover;
-     }
+    }
   }
-
   .second-card{
     .section-text-content{
       margin-bottom: 54px;
@@ -409,15 +422,12 @@ div.left-top-content{
       padding-top: 13px;
     }
   }
-
   .third-card{
     .section-text-content{
       margin-top: 19px;
     }
   }
-
- }
-
+}
 
 .slider-early-years{
   display: flex;
@@ -465,16 +475,13 @@ div.left-top-content{
         background:transparent;
         border-radius: 30px;
       }
-
       li{
         margin:30px 0;
       }
     }
-
     .slider-item-img{
       padding-bottom: 20px;
     }
-
     .slider-item-subtitle{
       max-width: 883px;
       text-align: center;
@@ -494,31 +501,26 @@ div.left-top-content{
   .container{
    padding: 0;
   }
-
   .list-albums{
     display: flex;
     flex-wrap: wrap;
     padding-top: 122px;
     justify-content: center;
   }
-
   .list-item{
     margin: 12px 10px;
   }
   .section-description-event{
     width: 100%;
   }
-
   .section-date-event{
     width: 100%;
     padding-top: 10px;
   }
-
   .subtitle{
     margin-bottom: 40px;
     line-height: 27.6px;
   }
-
   .card-item{
     width: 384px;
     height: 422px;
@@ -527,7 +529,6 @@ div.left-top-content{
     position: relative;
     object-fit: cover;
   }
-
   .album-serial-number{
     position: absolute;
     right: 9px;
@@ -564,7 +565,6 @@ div.left-top-content{
     max-height: 185px; 
     overflow: hidden;
   }
-
 }
 
 .section-upcoming-events{
@@ -585,13 +585,14 @@ div.left-top-content{
       position: relative;
     }
     div.section-text-content:after{
-      position: absolute;
-      bottom:-20px;
-      left: 36px;
-       content:'';
-       width: 1px;
-       height: 51px;
-       background-color: #000;
+      .mixin-after(absolute, null, -20px, 36px, null, 1px, 51px, #000);
+      // position: absolute;
+      // bottom:-20px;
+      // left: 36px;
+      //  content:'';
+      //  width: 1px;
+      //  height: 51px;
+      //  background-color: #000;
     }
     .text{
       margin:0;
@@ -601,13 +602,15 @@ div.left-top-content{
       position: relative;
     }
     div.section-tour:after{
-      position: absolute;
-      top:53px;
-      left: 0;
-      content:'';
-      width:132px;
-      height: 1px;
-      background-color: #000;
+      .mixin-after(absolute, 53px, null, 0, null, 132px, 1px, #000);
+ 
+      // position: absolute;
+      // top:53px;
+      // left: 0;
+      // content:'';
+      // width:132px;
+      // height: 1px;
+      // background-color: #000;
     }
     .section-heading{
       width: 1012px;
@@ -629,20 +632,19 @@ div.left-top-content{
     .section-tour-top-content{
       padding-bottom: 167px;
        .tour-date{
-      position: relative;
+          position: relative;
+        }
+        div.tour-date:after{
+        .mixin-after(absolute, null, -178px, 36px, null, 1px, 165px, #000);
+        // position: absolute;
+        // bottom:-178px;
+        // left: 36px;
+        // content:'';
+        // width:1px;
+        // height: 165px;
+        // background-color: #000;
+      }
     }
-
-    div.tour-date:after{
-      position: absolute;
-      bottom:-178px;
-      left: 36px;
-      content:'';
-      width:1px;
-      height: 165px;
-      background-color: #000;
-    }
-    }
-
     .section-tour-bottom-content{
       position: relative;
       .subtitle{
@@ -657,9 +659,10 @@ div.left-top-content{
 
 .section-history{
   .dates{
+    .mixin-flex;
     padding-top: 134px;
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
   }
   .date-history-value{
     text-align: center;
@@ -677,31 +680,51 @@ div.left-top-content{
     .container{
       max-width: 1594px;
     }
-   }
-   .date{
-      position: relative;
+  }
+  .date{
+     position: relative;
+  }
+  div.date:before{
+    .mixin-after(absolute, 66px, null, -182px, null, 147px, 1px, #000);
+        // position: absolute;
+        // content: '';
+        // left: -182px;
+        // top: 66px;
+        // width: 147px;
+        // height: 1px;
+        // background-color: #000000;
+      opacity: 0.28;
     }
-     div.date:before{
-        position: absolute;
-        content: '';
-        left: -182px;
-        top: 66px;
-        width: 147px;
-        height: 1px;
-        background-color: #000000;
+  .date:last-child{
+    &:after{
+      .mixin-after(absolute, 66px, null, null,  -187px, 147px, 1px, #000);
+        // position: absolute;
+        // content: '';
+        // right: -187px;
+        // top: 66px;
+        // width: 147px;
+        // height: 1px;
+        // background-color: #000;
         opacity: 0.28;
       }
-    .date:last-child{
-      &:after{
-        position: absolute;
-        content: '';
-        right: -187px;
-        top: 66px;
-        width: 147px;
-        height: 1px;
-        background-color: #000;
-        opacity: 0.28;
-      }
     }
-}
+  }
 
+.footer{
+  text-align: left;
+  .container{
+     width: 1012px;
+  }
+  .section-heading-content{
+    align-items: stretch;
+    padding-top: 201px;
+  }
+   .section-heading-title:after{
+    width: 100%;
+    left: 48%;
+    top: 55px;
+  }
+  .section-heading-description{
+    text-align: left;
+  }
+}
