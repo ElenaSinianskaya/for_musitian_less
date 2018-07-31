@@ -34,11 +34,13 @@
 }
 
 @media screen and (max-width:1440px){
-	.section-heading{
-		padding: 30px 0 !important;
-	}
-	div.section-heading-content{
-		padding-top: 38px !important;
+	.section{
+		.section-heading{
+			padding: 30px 0;
+			.section-heading-content{
+				padding-top: 38px;
+			}
+		}
 	}
 	.section-main{
 	  .section-foreground{
@@ -74,8 +76,12 @@
 	}
 
 	.section-latter-compositions{
-		.section-body-content{
-			padding: 30px 0 !important;
+		.section-foreground{
+			.section-body{
+				.section-body-content{
+					padding: 30px 0;
+				}
+			}
 		}
 	}
 
@@ -109,23 +115,29 @@
 
 @media screen and (max-width:1356px){
 	.section-history{
-		div.date:before{
-			display: none;
-		}
-		.date:last-child:after{
-			width:48px;
-			display: none;
-		}
-		.container{
-			max-width: 1224px !important;
+		.section-foreground{
+			div.container{
+				width: 90%;
+			}
+			div.date:before{
+				display: none;
+			}
+			.date:last-child:after{
+				width:48px;
+				display: none;
+			}
 		}
 	}
-	.slick-dots{
-      position: absolute;
-      left: 50%;
-      bottom: -80px !important;
-     }
-   }
+	.section-early-years{
+		.slider-early-years{
+			.slick-dots{
+		      position: absolute;
+		      left: 50%;
+		      bottom: -80px;
+		    }
+		}
+	}
+}
 
 @media screen and (max-width:1280px){
   .container{
@@ -140,16 +152,16 @@
 		min-height: 0;
 		}
 	   .header-nav{
-	    	width: 300px;
-			min-height: 100vh;
+	    	width: 320px;
+			height: 100vh;
 		    background-color: #e6e6e7;
 		    position: fixed;
 		    display:none;
-		    left: 0px;
+		    right: 0px;
 		    top: 0px;
 			.nav-item{
 		    	padding: 0 20px;
-		    	margin:40px 0;
+		    	margin:21px 0;
 		    }
 		}
 		.header-nav.active{
@@ -168,7 +180,7 @@
 		}
 		.header-menu{
 			position: absolute;
-			left:10px;
+			right:10px;
 			top: 10px;
 			font-size: 36px;
 			color:#a89c95;
@@ -192,20 +204,269 @@
 			}
 		}
 	}
-
-	.slider-item-text{
-		max-width: 50% !important;
-		margin-bottom: 0px !important;
+	.section-early-years{
+		.slider-early-years{
+			.slider-item{
+				.slider-item-text{
+					max-width: 50%;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+		
+	.section-upcoming-events{
+		.section-heading{
+			.section-heading-content{
+				margin:0 auto;
+			}
+			width:100%;
+			.section-heading-title{
+				text-align: center;
+			}
+			.container{
+				width: 90%;
+			}
+		}
+		.section-body{
+			width:100%;
+			.container{
+				width: 90%;
+			}
+		}
 	}
 }
 
-
-@media screen and (max-width:650px){
-	.slider-item{
-		padding-top: 20px !important;
+@media screen and (max-width:793px){
+	.section-discography{
+		.section-body-content-part{
+			display: flex;
+			flex-direction: column;
+			.section-body-content-left, .section-body-content-right{
+				width: 100%;
+			} 
+		}
 	}
-	.slick-dots{
-		bottom: -40px !important;;
+	.section-history {
+		.section-body{
+			.section-body-content{
+				.dates{
+				padding-top: 0;
+					.date-history-value{
+						margin-top: 0;
+					}
+				}
+
+			}
+		}
+	}
+	.section-latter-compositions{
+		.section-card{
+			.section-body-card-left, .section-body-card-right{
+				width: 88%;
+				height: 60%;
+				.section-video{
+					height: 100%;
+				}
+			}
+			.section-rate{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				.section-statistic{
+					padding: 10px 0 20px;
+					.list-statistic{
+						margin:0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:660px){
+	.section{
+		.section-foreground{
+			.container{
+				width: 100%;
+				padding: 0 15px;
+			}
+			.section-heading-description{
+				width: 100%;
+			}
+			.section-subtitle{
+				max-height: 123px;
+			}
+			.text{
+				margin: 10px 0;
+			}
+			.section-title{
+				letter-spacing: 1px;
+			}
+		}
+	}
+	.section-discography{
+		.section-background{
+			height: 55%;
+		}
+		.section-body-bottom{
+			padding-bottom: 100px;
+		}
+	}
+	.section-concert-tours{
+		.section-heading-title{
+			text-align: center;
+			&:before{
+				.mixin-after(null, 51px, -20px, null, 110%, 1px, #000);
+				}
+			&:after{
+				width: 80%;
+			}
+		}
+		.section-body-content{
+			.section-body-content-part{
+				padding-top: 150px;
+				.section-date-event{
+					width: 100%;
+				}
+				.section-description-event{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.section-albums{
+		padding-bottom: 0;
+		.section-body-content{
+			.list-albums{
+				padding: 100px 0 0;
+			}
+		}
+	}
+	.section-latter-compositions{
+		.section-heading{
+			.section-heading-title{
+				text-align: center;
+				&:before{
+				.mixin-after(null, 53px, 0, null, 100%, 1px, #000);
+				}
+				&:after{
+				width: 60%;
+				}
+			}
+		}
+		.card-text{
+			padding: 0 15px;
+		}
+		.section-description-event{
+			.list-statistic{
+				margin:0;
+			}
+		}
+		.section-text-content{
+			max-height: 88px;
+		}
+	}
+	.section-early-years{
+		.slider-early-years{
+			.slider-item{
+				padding-top: 20px;
+			}
+			.slick-dots{
+				bottom: -71px;
+			}
+		}
+	}
+	.section-upcoming-events{
+		.section-heading {
+			.section-heading-content{
+				width: 100%;
+				.section-heading-title{
+				text-align: center;
+					&:before{
+					.mixin-after(null, 53px, 20%, null, 60%, 1px, #000);
+					}
+					&:after{
+						width: 85%;
+						left: 49%;
+					}
+				}
+			}
+		}
+		.section-body-content{
+			.section-tour-bottom-content{
+				.section-text-content{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.section-history{
+		.section-background{
+			height: 62%;
+		}
+		.section-body {
+			.section-body-content{
+				.dates{
+					display: block;
+					margin:0 auto;
+					.third-history-date{
+						padding: 10px 0;
+						.date-histiry-text{
+							margin:0 auto;
+						}
+					}
+				}
+			}
+		} 
+	}
+	.footer{
+		.section-foreground{
+			display: flex;
+			align-items: center;
+			.container{
+				width: 100%;
+			}
+			.section-heading{
+				width: 100%;
+				&-content{
+					width: 100%;
+					padding-top: 60px;
+				    margin: 0 auto;
+				    text-align: center;
+				}
+				&-description{
+					margin:0 auto;
+					text-align: center;
+				}
+			}
+			.section-body{
+				width: 100%;
+				.section-body-content{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:469px){
+	.section-albums{
+		.section-body-content{
+			.list-albums{
+				.list-item{
+					width: 100%;
+					margin: 7px 0;
+				}
+				.card-item{
+					width: 100%;
+					padding: 10px;	
+					.section-date-event{
+						width: 80%;
+					}
+				}
+			}
+		}
 	}
 }
 
